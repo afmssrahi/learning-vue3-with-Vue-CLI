@@ -1,5 +1,8 @@
 <template>
 	<h1>{{ title }}</h1>
+	<br />
+	<input type="text" ref="name" />
+	<button @click="handleClick">click me</button>
 </template>
 
 <script>
@@ -9,6 +12,13 @@ export default {
 		return {
 			title: 'I am learning Vue3 Using CLI :)',
 		};
+	},
+	methods: {
+		handleClick() {
+			console.log(this.$refs.name);
+			this.$refs.name.classList.add('active');
+			this.$refs.name.focus();
+		},
 	},
 };
 </script>
