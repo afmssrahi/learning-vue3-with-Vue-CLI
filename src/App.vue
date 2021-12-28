@@ -1,12 +1,15 @@
 <template>
 	<h1>{{ title }}</h1>
+	<Modal />
 	<br />
 	<input type="text" ref="name" />
 	<button @click="handleClick">click me</button>
 </template>
 
 <script>
+import Modal from './components/Modal.vue';
 export default {
+	components: { Modal },
 	name: 'App',
 	data() {
 		return {
