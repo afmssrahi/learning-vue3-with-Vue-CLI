@@ -13,7 +13,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .modal {
 	width: 400px;
 	padding: 20px;
@@ -34,5 +34,9 @@ h1 {
 	color: #03cfb4;
 	border: none;
 	padding: 0;
+}
+
+.modal p {
+	font-style: normal;
 }
 </style>
