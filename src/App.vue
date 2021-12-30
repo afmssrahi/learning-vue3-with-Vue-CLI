@@ -4,7 +4,7 @@
 	<button @click="toggleModal">Open Modal 1</button>
 	<button @click="toggleModalTwo">Open Modal 2</button>
 
-	<div v-if="showModal">
+	<teleport to=".modal" v-if="showModal">
 		<Modal :theme="theme" @close="toggleModal">
 			<h1>This Modal Header</h1>
 			<p>Modal Content</p>
@@ -13,7 +13,7 @@
 				<a href="#">More Info</a>
 			</template>
 		</Modal>
-	</div>
+	</teleport>
 
 	<div v-if="showModalTwo">
 		<Modal @close="toggleModalTwo">
@@ -62,7 +62,8 @@ export default {
 </script>
 
 <style>
-#app {
+#app,
+.modal {
 	font-family: Avenir, Helvetica, Arial, sans-serif;
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
