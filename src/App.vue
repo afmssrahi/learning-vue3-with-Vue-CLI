@@ -1,6 +1,12 @@
 <template>
 	<h1>{{ title }}</h1>
-	<Modal :modalContent="saleModal" />
+	<p>Welcome...</p>
+	<button @click="toggleModal">Open Modal</button>
+	<div v-if="showModal">
+		<Modal :modalContent="saleModal" @close="toggleModal" />
+	</div>
+
+	<br />
 	<br />
 	<input type="text" ref="name" />
 	<button @click="handleClick">click me</button>
@@ -19,6 +25,7 @@ export default {
 				text: 'Modal Content',
 				theme: 'sale',
 			},
+			showModal: false,
 		};
 	},
 	methods: {
@@ -26,6 +33,9 @@ export default {
 			console.log(this.$refs.name);
 			this.$refs.name.classList.add('active');
 			this.$refs.name.focus();
+		},
+		toggleModal() {
+			this.showModal = !this.showModal;
 		},
 	},
 };
