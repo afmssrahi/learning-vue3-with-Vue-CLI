@@ -3,7 +3,7 @@
 	<p>Welcome...</p>
 	<button @click="toggleModal">Open Modal</button>
 	<div v-if="showModal">
-		<Modal :theme="sale" @close="toggleModal">
+		<Modal :theme="theme" @close="toggleModal">
 			<h1>This Modal Header</h1>
 			<p>Modal Content</p>
 			<template v-slot:links>
