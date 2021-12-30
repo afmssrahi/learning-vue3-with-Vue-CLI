@@ -3,7 +3,10 @@
 	<p>Welcome...</p>
 	<button @click="toggleModal">Open Modal</button>
 	<div v-if="showModal">
-		<Modal :modalContent="saleModal" @close="toggleModal" />
+		<Modal :theme="sale" @close="toggleModal">
+			<h1>This Modal Header</h1>
+			<p>Modal Content</p>
+		</Modal>
 	</div>
 
 	<br />
@@ -20,11 +23,7 @@ export default {
 	data() {
 		return {
 			title: 'I am learning Vue3 Using CLI :)',
-			saleModal: {
-				header: 'Sing Up for the Giveaway!',
-				text: 'Modal Content',
-				theme: 'sale',
-			},
+			theme: 'sale',
 			showModal: false,
 		};
 	},
