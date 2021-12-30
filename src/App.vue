@@ -6,6 +6,10 @@
 		<Modal :theme="sale" @close="toggleModal">
 			<h1>This Modal Header</h1>
 			<p>Modal Content</p>
+			<template v-slot:links>
+				<a href="#">SingUp </a>
+				<a href="#">More Info</a>
+			</template>
 		</Modal>
 	</div>
 
