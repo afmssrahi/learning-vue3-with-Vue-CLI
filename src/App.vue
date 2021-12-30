@@ -1,6 +1,6 @@
 <template>
 	<h1>{{ title }}</h1>
-	<Modal />
+	<Modal :modalContent="saleModal" />
 	<br />
 	<input type="text" ref="name" />
 	<button @click="handleClick">click me</button>
@@ -14,6 +14,11 @@ export default {
 	data() {
 		return {
 			title: 'I am learning Vue3 Using CLI :)',
+			saleModal: {
+				header: 'Sing Up for the Giveaway!',
+				text: 'Modal Content',
+				theme: 'sale',
+			},
 		};
 	},
 	methods: {
