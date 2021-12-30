@@ -1,5 +1,5 @@
 <template>
-	<div class="backdrop" @click="closeModal">
+	<div class="backdrop" @click.self="closeModal">
 		<div class="modal" :class="{ sale: modalContent.theme === 'sale' }">
 			<h1>{{ modalContent.header }}</h1>
 			<p>{{ modalContent.text }}</p>
