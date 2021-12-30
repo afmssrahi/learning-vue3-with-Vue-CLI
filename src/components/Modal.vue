@@ -68,7 +68,7 @@ h1 {
 	border: 1px solid #eee;
 	border-radius: 4px;
 	text-decoration: none;
-	margin: 1opx;
+	margin: 10px;
 }
 
 .modal.sale .actions {
