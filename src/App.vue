@@ -1,11 +1,24 @@
 <template>
 	<h1>{{ title }}</h1>
 	<p>Welcome...</p>
-	<button @click="toggleModal">Open Modal</button>
+	<button @click="toggleModal">Open Modal 1</button>
+	<button @click="toggleModalTwo">Open Modal 2</button>
+
 	<div v-if="showModal">
 		<Modal :theme="theme" @close="toggleModal">
 			<h1>This Modal Header</h1>
 			<p>Modal Content</p>
+			<template v-slot:links>
+				<a href="#">SingUp </a>
+				<a href="#">More Info</a>
+			</template>
+		</Modal>
+	</div>
+
+	<div v-if="showModalTwo">
+		<Modal @close="toggleModalTwo">
+			<h1>This Modal Header Two</h1>
+			<p>Modal Content Two</p>
 			<template v-slot:links>
 				<a href="#">SingUp </a>
 				<a href="#">More Info</a>
@@ -29,6 +42,7 @@ export default {
 			title: 'I am learning Vue3 Using CLI :)',
 			theme: 'sale',
 			showModal: false,
+			showModalTwo: false,
 		};
 	},
 	methods: {
@@ -39,6 +53,9 @@ export default {
 		},
 		toggleModal() {
 			this.showModal = !this.showModal;
+		},
+		toggleModalTwo() {
+			this.showModalTwo = !this.showModalTwo;
 		},
 	},
 };
